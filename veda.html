@@ -1,0 +1,334 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<link rel="stylesheet" type="text/css" href="style.css"  id="desktop">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/hammer.js"></script>
+<title>Veda Advisors</title>
+</head>
+
+<body>
+<! Updated April 15 2020 4:54 PM>
+
+
+
+
+
+
+<div id="splash">
+<img id="splash-img" src="images/hand.jpg">
+<img id="logo" src="images/logo.png">
+</div>
+
+
+
+
+
+<div id="wrapper">
+<div class="horizontal" id="horizontal-scroll">
+    <div class="table" id="table">
+        <article>
+        <div id="info-a-text">
+            Veda is a contemporary art consultion firm. Working artists comprise Veda. <br><br>
+
+We are immersed in this world. We know the insides. We know how to navigate its corners from the most important angles, from the privacy of the studio and the public space of the exhibition arena. What works are on the rise? What works are overlooked? What art will stand the test of time? How do the right exhibitions happen? We build our practices and our relationships around these questions and this is exactly how we build our consultation. <br><br>
+
+Contemporary artists connect with other artists in ways that advisors do not. We build relationships with our clients around having direct access to artist’s voices, studios, insights, and dreams. In this same way, we build relationships with gallerists through their artists, rather than through sales alone.  <br><br>
+
+We believe artistic acumen and first-hand knowledge of the processes of making and exhibiting art create the best collections, curations, and purchases. <br><br>
+
+Veda looks at the equation from all sides. We find out what works are hidden away and what projects are yet to be; we encourage commissions and pay attention to unrealized works. Unlike other firms focussed on answers, we are in the business of dialogue, questions, and visions. 
+<br><br>
+</div>
+        </article>
+
+
+<article>
+<div id="info-b-text">
+The Way We Work:<br><br>
+
+Veda is not commission based.<br>
+All works are under $50,000.00<br>
+Advise on burgeoning personal collections and single purchases.<br>
+Render the esoteric, intuitive, beautiful, and difficult accessible and understandable.<br>
+Introduce you art works by also giving the historical context from which they are hewn.<br>
+Offer presentations by artists designed for specific sites and businesses.<br>
+If not in New York, we are your eyes and boots on the ground.<br>
+Encourage and facilitate commissions and site-specific work.<br>
+Advise new and established commercial collections.<br>
+Guidance on archiving, shipping, and provenance.<br>
+Curate rotating works for corporate collections.<br>
+Guided exhibition tours for small groups.<br>
+<br>
+
+*<br>
+<br>
+
+We work with a core group of about one hundred artists, mostly based in New York City, all of which we have build deep relationships with over years. <br>
+<br>
+<br>
+*
+</div>
+</article>
+
+<article>
+<div id="info-c-text">
+<br>
+Rose Marcus, founder, work has been exhibited in galleries and museums internationally. She is the lead researcher at the Whitney Museum of American Art. She is trained in sculpture and architecture and has a Masters degree in Art History. She has been curating exhibitions for a decade and presented over fifteen one and two-person exhibitions. Her work has been reviewed and her writing has been published in dozens of publications. 
+</div>
+</article>
+        <!-- Repeat this part as many times as necessary. -->
+
+
+</div>
+</div>
+</div>
+
+<div id="wrapper-2">
+<span id="one"> <img src="images/closed.png"> </span>
+<span id="two"> <img src="images/open.png"> </span>
+<span id="three"> <img src="images/open.png"> </span>
+</div>
+
+
+
+
+
+
+
+
+</body>
+
+
+<script>
+
+
+var mobile = false;
+
+function changeCSS(cssFile, cssLinkIndex) {
+
+    var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+
+    var newlink = document.createElement("link");
+    newlink.setAttribute("rel", "stylesheet");
+    newlink.setAttribute("type", "text/css");
+    newlink.setAttribute("href", "mobile.css");
+
+    document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+}
+
+ $(document).ready(function() {
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+   changeCSS('mobile.css', 0);
+   mobile = true;
+   
+   
+} else{}
+
+});
+
+    var tableWidth = table.clientWidth;
+    var displacement = tableWidth/3;
+    var caption = 1;
+
+    window.addEventListener('resize', adjustScroll);
+
+    function adjustScroll(){
+
+      tableWidth = table.clientWidth;
+      displacement = tableWidth/3;
+
+
+      if (caption == 1){
+       $("#horizontal-scroll").animate({ scrollLeft: 0 }, "fast");
+      }
+
+      if (caption == 2){
+      $("#horizontal-scroll").animate({ scrollLeft: displacement }, "fast");
+      }
+
+      if (caption == 3){
+      $("#horizontal-scroll").animate({ scrollLeft: displacement*2 }, "fast");
+
+      }
+    }
+
+
+    $("#splash-img").click(function() {
+    var a = $(window).height();
+      console.log(a);
+  $("html, body").animate({ scrollTop: a }, "fast");
+  return false;
+
+  });
+
+       $("#logo").click(function() {
+    var a = $(window).height();
+      console.log(a);
+  $("html, body").animate({ scrollTop: a }, "fast");
+  return false;
+
+  });
+
+
+
+if (mobile == false) {
+    $("#one").click(function() {
+    var scroll = document.querySelector("#horizontal-scroll");
+      console.log(displacement, scroll.scrollLeft);
+  $("#horizontal-scroll").animate({ scrollLeft: 0 }, "fast");
+  $("#one img").attr("src", "images/closed.png");
+  $("#two img").attr("src", "images/open.png");
+  $("#three img").attr("src", "images/open.png");
+  caption = 1;
+  console.log(displacement, scroll.scrollLeft);
+});
+
+
+ $("#two").click(function() {
+ $("#horizontal-scroll").animate({ scrollLeft: displacement }, "fast");
+  $("#two img").attr("src", "images/closed.png");
+  $("#three img").attr("src", "images/open.png");
+  $("#one img").attr("src", "images/open.png");
+ caption = 2;
+  console.log("it did");
+});
+
+  $("#three").click(function() {
+ $("#horizontal-scroll").animate({ scrollLeft: displacement*2 }, "fast");
+  $("#three img").attr("src", "images/closed.png");
+  $("#one img").attr("src", "images/open.png");
+  $("#two img").attr("src", "images/open.png");
+ caption =3;
+  console.log("it did");
+});
+
+
+
+    $("#info-a-text").click(function() {
+    var scroll = document.querySelector("#horizontal-scroll");
+      console.log(displacement, scroll.scrollLeft);
+  $("#horizontal-scroll").animate({ scrollLeft: displacement }, "fast");
+  $("#one img").attr("src", "images/open.png")
+  $("#two img").attr("src", "images/closed.png")
+  caption = 2;
+  console.log(displacement, scroll.scrollLeft, mobile);
+});
+
+
+
+  $("#info-b-text").click(function() {
+ $("#horizontal-scroll").animate({ scrollLeft: displacement*2 }, "fast");
+  $("#two img").attr("src", "images/open.png")
+  $("#three img").attr("src", "images/closed.png")
+ caption = 3;
+  console.log("it did");
+});
+
+
+
+  $("#info-c-text").click(function() {
+ $("#horizontal-scroll").animate({ scrollLeft: 0 }, "fast");
+  $("#three img").attr("src", "images/open.png");
+  $("#one img").attr("src", "images/closed.png");
+ caption =1;
+  console.log("it did");
+});
+
+}
+
+
+
+
+
+
+
+
+var myElement = document.getElementById('horizontal-scroll');
+var mc = Hammer(myElement);
+mc.get('swipe').set({
+    direction: Hammer.DIRECTION_HORIZONTAL
+});
+
+
+mc.on("swipeleft", moveLeft); 
+mc.on("swiperight", moveRight); 
+
+
+
+var scroll = document.querySelector("#horizontal-scroll");
+
+
+if (mobile == true) {
+function moveLeft(event){
+
+
+    if (caption == 3){
+    caption = 3;
+    return;
+  }
+
+  console.log("it ran past the 1nd");
+
+     if (caption == 2){
+  $("#horizontal-scroll").animate({ scrollLeft: displacement*2 }, "fast");
+  $("#one img").attr("src", "images/open.png");
+  $("#two img").attr("src", "images/open.png");
+  $("#three img").attr("src", "images/closed.png")
+  caption = 3;
+  return;    
+  }
+
+  console.log("it ran past the 2nd");
+
+    if (caption == 1){
+  $("#horizontal-scroll").animate({ scrollLeft: displacement }, "fast");
+  $("#one img").attr("src", "images/open.png");
+  $("#two img").attr("src", "images/closed.png");
+  $("#three img").attr("src", "images/open.png");
+  caption = 2;
+  return;
+  }
+    console.log("it ran past the 3nd");
+}
+
+
+
+function moveRight(event){
+
+  if (caption == 1){
+  caption =1;
+  return;
+  }
+  console.log("it ran past the 1st");
+
+  if (caption == 2){
+  $("#horizontal-scroll").animate({ scrollLeft: 0 }, "fast");
+  $("#one img").attr("src", "images/closed.png");
+  $("#two img").attr("src", "images/open.png");
+  $("#three img").attr("src", "images/open.png");
+  caption = 1;
+  return false;
+  }
+  console.log("it ran past the 2st");
+
+    if (caption == 3){
+  $("#horizontal-scroll").animate({ scrollLeft: displacement }, "fast");
+  $("#one img").attr("src", "images/open.png");
+  $("#two img").attr("src", "images/closed.png");
+  $("#three img").attr("src", "images/open.png");
+  caption = 2;  
+  return false;
+  }
+  console.log("it ran past the 3st");
+    
+}
+}
+
+
+</script>
+
