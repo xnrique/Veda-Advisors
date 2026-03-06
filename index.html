@@ -132,7 +132,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     function adjustScroll(){
 
       tableWidth = table.clientWidth;
-      displacement = tableWidth/3;
+      displacement = tableWidth/4;
 
 
       if (caption == 1){
@@ -145,6 +145,10 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
       if (caption == 3){
       $("#horizontal-scroll").animate({ scrollLeft: displacement*2 }, "fast");
+
+      }
+      if (caption == 4){
+      $("#horizontal-scroll").animate({ scrollLeft: displacement*3 }, "fast");
 
       }
     }
