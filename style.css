@@ -32,32 +32,28 @@ html, body {
 
 a:visted {
  	text-decoration: none;
- 	color: #666666;
-    text-shadow: 2px 2px 2px rgb(169, 169, 169);
+ 	color: #535252;
 }
 
  a:link{
 	text-decoration: none;
-	color: #666666;
-    text-shadow: 2px 2px 2px rgb(169, 169, 169);
+	    color: #535252;
 	}
 
 a:hover{
 	text-decoration: underline;
-	color:#9c9c9a;
+	    color: #535252;
 	text-shadow: none;
 }
 
 a:active{
 text-decoration: none;
-color: #666666;
-    text-shadow: 2px 2px 2px rgb(169, 169, 169);
+    color: #535252;
 }
 
 a{
 	text-decoration: none;
-	color: #666666;
-    text-shadow: 2px 2px 2px rgb(169, 169, 169);
+	    color: #535252;
 }
 
 
