@@ -60,6 +60,16 @@ Rose Marcus, founder, has been exhibited in galleries and museums internationall
 <br>
 <br></div>
 </article>
+
+<article>
+<div id="info-c-text">
+<br>
+<u>Contact</u><br>
+rosemarcus@gmail.com
+    
+<br>
+<br></div>
+</article>
         <!-- Repeat this part as many times as necessary. -->
 
 
@@ -71,6 +81,7 @@ Rose Marcus, founder, has been exhibited in galleries and museums internationall
 <span id="one"> <img src="images/closed.png"> </span>
 <span id="two"> <img src="images/open.png"> </span>
 <span id="three"> <img src="images/open.png"> </span>
+<span id="four"> <img src="images/open.png"> </span>
 </div>
 
 
@@ -165,6 +176,7 @@ if (mobile == false) {
   $("#one img").attr("src", "images/closed.png");
   $("#two img").attr("src", "images/open.png");
   $("#three img").attr("src", "images/open.png");
+  $("#four img").attr("src", "images/open.png");
   caption = 1;
   console.log(displacement, scroll.scrollLeft);
 });
@@ -175,6 +187,7 @@ if (mobile == false) {
   $("#two img").attr("src", "images/closed.png");
   $("#three img").attr("src", "images/open.png");
   $("#one img").attr("src", "images/open.png");
+  $("#four img").attr("src", "images/open.png");   
  caption = 2;
   console.log("it did");
 });
@@ -184,10 +197,20 @@ if (mobile == false) {
   $("#three img").attr("src", "images/closed.png");
   $("#one img").attr("src", "images/open.png");
   $("#two img").attr("src", "images/open.png");
+  $("#four img").attr("src", "images/open.png"); 
  caption =3;
   console.log("it did");
 });
 
+  $("#four").click(function() {
+ $("#horizontal-scroll").animate({ scrollLeft: displacement*3 }, "fast");
+  $("#four img").attr("src", "images/closed.png");
+  $("#one img").attr("src", "images/open.png");
+  $("#two img").attr("src", "images/open.png");
+  $("#three img").attr("src", "images/open.png"); 
+ caption =4;
+  console.log("it did");
+});
 
 
     $("#info-a-text").click(function() {
@@ -213,17 +236,22 @@ if (mobile == false) {
 
 
   $("#info-c-text").click(function() {
- $("#horizontal-scroll").animate({ scrollLeft: 0 }, "fast");
+ $("#horizontal-scroll").animate({ scrollLeft: displacement*3 }, "fast");
   $("#three img").attr("src", "images/open.png");
+  $("#four img").attr("src", "images/closed.png");
+ caption =4;
+  console.log("it did");
+});
+
+$("#info-d-text").click(function() {
+ $("#horizontal-scroll").animate({ scrollLeft: 0 }, "fast");
+  $("#four img").attr("src", "images/open.png");
   $("#one img").attr("src", "images/closed.png");
- caption =1;
+   caption =1;
   console.log("it did");
 });
 
 }
-
-
-
 
 
 
@@ -246,7 +274,6 @@ var scroll = document.querySelector("#horizontal-scroll");
 
 if (mobile == true) {
 function moveLeft(event){
-
 
     if (caption == 3){
     caption = 3;
