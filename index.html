@@ -206,7 +206,7 @@ if (mobile == false) {
 });
 
   $("#three").click(function() {
- $("#horizontal-scroll").animate({ scrollLeft: displacement*2 }, "fast");
+  $("#horizontal-scroll").animate({ scrollLeft: displacement*2 }, "fast");
   $("#three img").attr("src", "images/closed.png");
   $("#one img").attr("src", "images/open.png");
   $("#two img").attr("src", "images/open.png");
@@ -253,14 +253,6 @@ if (mobile == false) {
   $("#three img").attr("src", "images/open.png");
   $("#four img").attr("src", "images/closed.png");
  caption =4;
-  console.log("it did");
-});
-
-$("#info-d-text").click(function() {
- $("#horizontal-scroll").animate({ scrollLeft: 0 }, "fast");
-  $("#four img").attr("src", "images/open.png");
-  $("#one img").attr("src", "images/closed.png");
-   caption =1;
   console.log("it did");
 });
 
